@@ -122,8 +122,8 @@ limitations under the License.
         getSensorsBtn.addEventListener('click', function() {
           var sensor = new AmbientLightSensor();
           sensor.start();
-          sensor.onchange = function(event) {
-              log('Lux Level:' + event.reading.illuminance);
+          sensor.onchange = function() {
+              log('Lux Level:' + sensor.reading.illuminance);
           };
           sensor.onerror = function(event) {
               log('Error' + event.error.name, event.error.message);
